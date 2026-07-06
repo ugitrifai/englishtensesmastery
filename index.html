@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>English Tenses Mastery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="landing-page" class="screen active">
+        <div class="welcome-card">
+            <h1>🏆 English Tenses Mastery</h1>
+            <p>Kuasai 16 Tenses Bahasa Inggris Langkah demi Langkah</p>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Nama Lengkap</label>
+                    <input type="text" id="username" required placeholder="Masukkan nama Anda...">
+                </div>
+                <div class="form-group">
+                    <label for="user-status">Status/Pekerjaan</label>
+                    <select id="user-status" required>
+                        <option value="" disabled selected>Pilih status...</option>
+                        <option value="Pelajar">Pelajar</option>
+                        <option value="Mahasiswa">Mahasiswa</option>
+                        <option value="Pegawai">Pegawai</option>
+                        <option value="Wirausahawan">Wirausahawan</option>
+                        <option value="Lainnya">Lainnya</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Mulai Petualangan</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="dashboard-page" class="screen">
+        <header class="user-header">
+            <div class="profile-area">
+                <div class="avatar" id="user-avatar">👤</div>
+                <div class="user-info">
+                    <h3 id="display-name">Nama Pengguna</h3>
+                    <span id="display-status">Status</span>
+                </div>
+            </div>
+            <button id="btn-reset-data" class="btn-text">Reset Data</button>
+        </header>
+
+        <main class="dashboard-content">
+            <section class="badges-section">
+                <h4>Lencana Pencapaian (Badges)</h4>
+                <div id="badges-container" class="badges-grid">
+                    </div>
+            </section>
+
+            <section class="levels-section">
+                <h4>Peta Level Permainan</h4>
+                <div id="levels-grid" class="levels-grid">
+                    </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="gameplay-page" class="screen">
+        <header class="game-header">
+            <button id="btn-back-dashboard" class="btn-back">⬅ Dashboard</button>
+            <div id="game-title-area">
+                <h3 id="current-level-title">Level 1</h3>
+                <div id="phase-indicator" class="phase-pills">
+                    <span class="pill" data-phase="0">Teori</span>
+                    <span class="pill" data-phase="1">Pilih Kata</span>
+                    <span class="pill" data-phase="2">Susun Kata</span>
+                    <span class="pill" data-phase="3">Koreksi</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="game-content">
+            <div id="phase-presentation" class="game-phase-panel active">
+                <div class="card presentation-card">
+                    <h2 id="theory-tenses-title">Simple Present Tense</h2>
+                    <div class="theory-block">
+                        <h5>Fungsi & Kegunaan</h5>
+                        <p id="theory-function"></p>
+                    </div>
+                    <div class="theory-block">
+                        <h5>Struktur / Rumus Kalimat</h5>
+                        <div class="formula-box" id="theory-formula"></div>
+                    </div>
+                    <div class="theory-block">
+                        <h5>Contoh Kalimat</h5>
+                        <ul id="theory-examples"></ul>
+                    </div>
+                    <button id="btn-start-quiz" class="btn btn-primary">Mulai Latihan Fase</button>
+                </div>
+            </div>
+
+            <div id="phase-quiz" class="game-phase-panel">
+                <div class="quiz-progress-bar">
+                    <div id="quiz-progress-fill" style="width: 0%;"></div>
+                </div>
+                <div class="quiz-header">
+                    <span id="quiz-question-number">Soal 1 dari 10</span>
+                    <span id="quiz-score-live">Skor: 0</span>
+                </div>
+
+                <div class="card question-card">
+                    <p id="question-instruction" class="instruction-text">Pilih bentuk kata kerja yang tepat:</p>
+                    <div id="question-text" class="question-body">She _______ (go) to school everyday.</div>
+
+                    <div id="quiz-input-container">
+                        </div>
+
+                    <div id="feedback-panel" class="feedback-panel hidden">
+                        <div id="feedback-status" class="feedback-status">Benar!</div>
+                        <div id="feedback-explanation" class="feedback-explanation">Penjelasan lengkap di sini.</div>
+                    </div>
+
+                    <div class="quiz-actions">
+                        <button id="btn-submit-answer" class="btn btn-primary">Periksa Jawaban</button>
+                        <button id="btn-next-question" class="btn btn-success hidden">Lanjut Soal</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="phase-result" class="game-phase-panel">
+                <div class="card result-card">
+                    <div class="result-icon" id="result-icon">🎉</div>
+                    <h2 id="result-status-title">Level Selesai!</h2>
+                    <div class="score-display">
+                        <span class="score-label">Skor Akhir Anda</span>
+                        <h1 id="result-score-percentage">90%</h1>
+                        <p id="result-score-absolute">(9 dari 10 Benar)</p>
+                    </div>
+                    <p id="result-msg">Selamat! Anda berhasil membuka level berikutnya.</p>
+                    <div class="result-actions">
+                        <button id="btn-retry-level" class="btn btn-secondary">Ulangi Level</button>
+                        <button id="btn-finish-level" class="btn btn-primary">Kembali ke Map</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

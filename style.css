@@ -1,0 +1,179 @@
+:root {
+    --primary-color: #4a6fa5;
+    --secondary-color: #16db93;
+    --danger-color: #f15bb5;
+    --warning-color: #f79256;
+    --bg-color: #f4f7f6;
+    --text-color: #2b2d42;
+    --card-bg: #ffffff;
+    --radius: 16px;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Screen Controller */
+.screen {
+    display: none;
+    min-height: 100vh;
+    padding: 16px;
+}
+.screen.active {
+    display: flex;
+    flex-direction: column;
+}
+
+/* UI Elements */
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    margin-bottom: 16px;
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+.btn-primary { background: var(--primary-color); color: white; }
+.btn-secondary { background: #e2e8f0; color: var(--text-color); }
+.btn-success { background: var(--secondary-color); color: white; }
+.btn-text { background: transparent; border: none; color: var(--danger-color); font-weight: bold; }
+
+/* 1. Landing Page UI */
+#landing-page {
+    justify-content: center;
+    align-items: center;
+}
+.welcome-card {
+    background: white;
+    padding: 30px 24px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+.welcome-card h1 { margin-bottom: 8px; color: var(--primary-color); font-size: 1.8rem; }
+.welcome-card p { font-size: 0.9rem; color: #64748b; margin-bottom: 24px; }
+.form-group { text-align: left; margin-bottom: 16px; }
+.form-group label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.85rem; }
+.form-group input, .form-group select {
+    width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem; outline: none;
+}
+.form-group input:focus, .form-group select:focus { border-color: var(--primary-color); }
+
+/* 2. Dashboard UI */
+.user-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 4px 16px;
+    border-bottom: 2px solid #e2e8f0;
+}
+.profile-area { display: flex; align-items: center; gap: 12px; }
+.avatar { font-size: 2rem; background: white; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 50%; box-shadow: var(--shadow); }
+.user-info h3 { font-size: 1rem; font-weight: 700; }
+.user-info span { font-size: 0.8rem; color: #64748b; background: #e2e8f0; padding: 2px 8px; border-radius: 20px; }
+
+.badges-section, .levels-section { margin-top: 20px; }
+.badges-section h4, .levels-section h4 { margin-bottom: 12px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; color: #64748b; }
+.badges-grid { display: flex; gap: 10px; overflow-x: auto; padding: 8px 4px; scrollbar-width: none; }
+.badges-grid::-webkit-scrollbar { display: none; }
+.badge-item {
+    flex: 0 0 75px; text-align: center; background: white; padding: 10px; border-radius: 12px; box-shadow: var(--shadow); opacity: 0.3; transform: scale(0.9); transition: all 0.3s ease;
+}
+.badge-item.unlocked { opacity: 1; transform: scale(1); border: 2px solid #ffbc42; }
+.badge-item .icon { font-size: 1.8rem; }
+.badge-item .title { font-size: 0.65rem; font-weight: bold; display: block; margin-top: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.levels-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 4px; }
+.level-btn {
+    aspect-ratio: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; background: white; border: 2px solid #e2e8f0; border-radius: var(--radius); font-weight: bold; cursor: pointer; position: relative; transition: all 0.2s ease;
+}
+.level-btn.unlocked { border-color: var(--primary-color); color: var(--primary-color); }
+.level-btn.current { background: var(--primary-color); color: white; border-color: var(--primary-color); box-shadow: 0 0 12px rgba(74, 111, 165, 0.4); }
+.level-btn.completed { background: var(--secondary-color); color: white; border-color: var(--secondary-color); }
+.level-btn.locked { opacity: 0.5; background: #cbd5e1; cursor: not-allowed; }
+.level-btn .num { font-size: 1.2rem; }
+.level-btn .star { font-size: 0.7rem; margin-top: 2px; }
+
+/* 3. Gameplay UI */
+.game-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.btn-back { background: none; border: none; font-size: 0.9rem; font-weight: bold; color: var(--primary-color); cursor: pointer; }
+#game-title-area { flex-grow: 1; text-align: right; }
+#game-title-area h3 { font-size: 0.95rem; font-weight: 800; color: #1e293b; }
+.phase-pills { display: flex; justify-content: flex-end; gap: 4px; margin-top: 4px; }
+.phase-pills .pill { font-size: 0.6rem; padding: 2px 6px; background: #cbd5e1; border-radius: 10px; color: white; }
+.phase-pills .pill.active { background: var(--primary-color); }
+
+.game-phase-panel { display: none; width: 100%; }
+.game-phase-panel.active { display: block; }
+
+/* Teori Format */
+.presentation-card h2 { font-size: 1.4rem; color: var(--primary-color); margin-bottom: 16px; border-bottom: 2px solid #f1f5f9; padding-bottom: 8px;}
+.theory-block { margin-bottom: 14px; }
+.theory-block h5 { font-size: 0.85rem; color: #64748b; text-transform: uppercase; margin-bottom: 4px;}
+.theory-block p { font-size: 0.95rem; color: #334155; }
+.formula-box { background: #f8fafc; padding: 10px; border-radius: 8px; border-left: 4px solid var(--primary-color); font-family: monospace; font-size: 0.9rem; font-weight: bold; }
+.theory-block ul { padding-left: 18px; font-size: 0.9rem; }
+
+/* Quiz Format */
+.quiz-progress-bar { width: 100%; height: 6px; background: #e2e8f0; border-radius: 3px; overflow: hidden; margin-bottom: 12px; }
+#quiz-progress-fill { height: 100%; background: var(--secondary-color); transition: width 0.3s ease; }
+.quiz-header { display: flex; justify-content: space-between; font-size: 0.8rem; color: #64748b; font-weight: bold; margin-bottom: 12px; }
+.instruction-text { font-size: 0.85rem; font-weight: bold; color: var(--primary-color); text-transform: uppercase; margin-bottom: 6px; }
+.question-body { font-size: 1.1rem; font-weight: 600; margin-bottom: 20px; color: #1e293b; }
+
+/* Opsi Pilihan Ganda (Fase 1) */
+.options-container { display: flex; flex-direction: column; gap: 10px; width: 100%; margin-bottom: 20px;}
+.option-btn {
+    width: 100%; padding: 14px; text-align: left; background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 0.95rem; cursor: pointer; font-weight: 500;
+}
+.option-btn.selected { border-color: var(--primary-color); background: #f0f4f8; }
+
+/* Susun Kata (Fase 2) */
+.word-pool { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; min-height: 44px; padding: 8px; border: 2px dashed #cbd5e1; border-radius: 12px; }
+.word-slots { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; min-height: 50px; padding: 8px; background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 12px; }
+.word-item { padding: 8px 14px; background: white; border: 1px solid #cbd5e1; border-radius: 8px; cursor: pointer; font-size: 0.95rem; font-weight: 500; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+
+/* Koreksi Kalimat (Fase 3) */
+.input-correction { width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; margin-bottom: 20px; outline: none; }
+.input-correction:focus { border-color: var(--primary-color); }
+
+/* Feedback & Result */
+.feedback-panel { padding: 12px; border-radius: 10px; margin-bottom: 16px; font-size: 0.9rem; }
+.feedback-panel.correct { background: #d1fae5; border-left: 4px solid var(--secondary-color); color: #065f46; }
+.feedback-panel.incorrect { background: #fce7f3; border-left: 4px solid var(--danger-color); color: #9d174d; }
+.feedback-status { font-weight: bold; font-size: 0.95rem; margin-bottom: 2px; }
+.hidden { display: none !important; }
+
+.result-card { text-align: center; padding: 40px 20px; }
+.result-icon { font-size: 4rem; margin-bottom: 10px; }
+.score-display { margin: 20px 0; }
+.score-label { font-size: 0.85rem; color: #64748b; text-transform: uppercase; }
+#result-score-percentage { font-size: 3.5rem; color: var(--primary-color); line-height: 1; }
+#result-score-absolute { font-size: 0.95rem; color: #64748b; }
+#result-msg { font-size: 0.95rem; margin-bottom: 24px; color: #334155; }
+.result-actions { display: flex; flex-direction: column; gap: 10px; }
