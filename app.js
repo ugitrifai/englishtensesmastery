@@ -6,7 +6,7 @@ const tensesData = [
         id: 1,
         title: "1. Simple Present Tense",
         theory: {
-            function: "Digunakan untuk menyatakan fakta umum, kebiasaan rutin, atau situasi permanen saat ini.",
+            function: "Digunakan untuk menyatakan fakta umum, kebiasaan/jadwal rutin, atau situasi permanen saat ini.",
             formula: "S + V1(-s/-es) atau S + is/am/are + Adj/Noun",
             examples: ["She drinks coffee every morning.", "The sun rises in the east.", "They are professional nurses."]
         },
@@ -24,23 +24,23 @@ const tensesData = [
                 { q: "You _______ (look) dynamic today.", opt: ["look", "looks", "looking"], a: "look", exp: "Subjek 'You' berpasangan dengan bentuk kata kerja dasar V1 tanpa s." }
             ],
             fase2: [ // Susun Kata menjadi Kalimat
-                { q: ["always", "she", "speaks", "the", "truth"], a: "she always speaks the truth", exp: "Struktur standar: Subjek + Adverb + Verb + Objek." },
-                { q: ["do", "not", "they", "smoke", "here"], a: "they do not smoke here", exp: "Kalimat negatif: Subjek + do not + V1 + Keterangan tempat." },
-                { q: ["is", "jakarta", "a", "big", "city"], a: "jakarta is a big city", exp: "Kalimat nominal: Subjek + To Be + Adjective Phrase." },
-                { q: ["does", "he", "play", "guitar", "well"], a: "does he play guitar well", exp: "Kalimat tanya: Does + Subjek + V1 + Objek + Keterangan?" },
-                { q: ["birds", "fly", "in", "the", "sky"], a: "birds fly in the sky", exp: "Fakta alamiah: Subjek jamak + V1 + Keterangan." },
-                { q: ["i", "am", "not", "a", "doctor"], a: "i am not a doctor", exp: "Negatif nominal: Subjek + am + not + Noun." },
-                { q: ["we", "learn", "english", "together"], a: "we learn english together", exp: "Susunan subjek jamak diikuti V1 dan objek langsung." },
-                { q: ["the", "train", "leaves", "at", "seven"], a: "the train leaves at seven", exp: "Pernyataan jadwal: Subjek tunggal + V1+s + Keterangan waktu." },
-                { q: ["nurses", "help", "sick", "people"], a: "nurses help sick people", exp: "Pernyataan umum: Subjek jamak + V1 + Objek." },
-                { q: ["do", "you", "understand", "the", "lesson"], a: "do you understand the lesson", exp: "Interogatif verbal: Do + You + V1 + Objek?" }
+                { q: ["always", "She", "speaks", "the", "truth"], a: "She always speaks the truth", exp: "Struktur standar: Subjek + Adverb + Verb + Objek." },
+                { q: ["do", "not", "They", "smoke", "here"], a: "They do not smoke here", exp: "Kalimat negatif: Subjek + do not + V1 + Keterangan tempat." },
+                { q: ["is", "Jakarta", "a", "big", "city"], a: "Jakarta is a big city", exp: "Kalimat nominal: Subjek + To Be + Adjective Phrase." },
+                { q: ["Does", "he", "play", "guitar", "well?"], a: "Does he play guitar well?", exp: "Kalimat tanya: Does + Subjek + V1 + Objek + Keterangan?" },
+                { q: ["Birds", "fly", "in", "the", "sky"], a: "Birds fly in the sky", exp: "Fakta alamiah: Subjek jamak + V1 + Keterangan." },
+                { q: ["I", "am", "not", "a", "doctor"], a: "I am not a doctor", exp: "Negatif nominal: Subjek + am + not + Noun." },
+                { q: ["We", "learn", "english", "together"], a: "We learn english together", exp: "Susunan subjek jamak diikuti V1 dan objek langsung." },
+                { q: ["The", "train", "leaves", "at", "seven"], a: "The train leaves at seven", exp: "Pernyataan jadwal: Subjek tunggal + V1+s + Keterangan waktu." },
+                { q: ["Nurses", "help", "sick", "people"], a: "Nurses help sick people", exp: "Pernyataan umum: Subjek jamak + V1 + Objek." },
+                { q: ["Do", "you", "understand", "the", "lesson?"], a: "Do you understand the lesson?", exp: "Interogatif verbal: Do + You + V1 + Objek?" }
             ],
             fase3: [ // Koreksi Kalimat Salah
                 { q: "He go to the office by bus every day.", a: "He goes to the office by bus every day.", exp: "Subjek tunggal 'He' membutuhkan verb berakhiran es yakni 'goes'." },
                 { q: "They is smart students in our school.", a: "They are smart students in our school.", exp: "To be yang tepat untuk subjek plural 'They' adalah 'are'." },
                 { q: "She do not speak English fluently.", a: "She does not speak English fluently.", exp: "Auxiliary negatif untuk orang ketiga tunggal (She) adalah 'does not'." },
                 { q: "Do he always arrive on time?", a: "Does he always arrive on time?", exp: "Gunakan auxiliary 'Does' untuk subjek tunggal 'he'." },
-                { q: "I am study for the examination.", a: "I study for the examination.", exp: "Jangan campurkan To be 'am' dengan V1 murni dalam kalimat aktif present." },
+                { q: "I am study for the examination every night.", a: "I study for the examination every night.", exp: "Jangan campurkan To be 'am' dengan V1 murni dalam kalimat aktif present." },
                 { q: "The sun rise in the east every morning.", a: "The sun rises in the east every morning.", exp: "The sun adalah subjek tunggal (it), maka kata kerja wajib ditambah 's'." },
                 { q: "We plays football in the field.", a: "We play football in the field.", exp: "Subjek 'We' tidak memerlukan akhiran 's' pada kata kerjanya." },
                 { q: "Anatomy are a tough subject for nurses.", a: "Anatomy is a tough subject for nurses.", exp: "Anatomy adalah subjek tunggal keilmuan, gunakan to be 'is'." },
@@ -53,9 +53,9 @@ const tensesData = [
         id: 2,
         title: "2. Present Continuous Tense",
         theory: {
-            function: "Menyatakan aksi yang sedang berlangsung secara aktif pada detik ini atau sekitar waktu pembicaraan.",
+            function: "Menyatakan aksi yang sedang berlangsung secara aktif pada detik ini atau sekitar waktu pembicaraan. Bisa juga digunakan untuk menceritakan rencana jangka pendek.",
             formula: "S + is/am/are + V-ing",
-            examples: ["The students are doing an exam right now.", "I am writing a code at this moment.", "Listen! The baby is crying."]
+            examples: ["The students are doing an exam right now.", "I am writing a code at this moment.", "Listen! The baby is crying.", "We are having dinner together tonight."]
         },
         questions: {
             fase1: [
@@ -67,20 +67,20 @@ const tensesData = [
                 { q: "Why _______ you crying?", opt: ["is", "am", "are"], a: "are", exp: "Kata ganti 'you' berpasangan dengan 'are' dalam continuous aspect." },
                 { q: "The nurse _______ (inject) the drug right now.", opt: ["is injecting", "are injecting", "am injecting"], a: "is injecting", exp: "Subjek tunggal, gunakan 'is injecting' untuk aksi yang sedang berlangsung." },
                 { q: "We _______ (learn) advanced grammar codes currently.", opt: ["is learning", "are learning", "am learning"], a: "are learning", exp: "Subjek 'we' membutuhkan auxiliary 'are'." },
-                { q: "The laptop _______ (upgrade) its software now.", opt: ["is upgrading", "are upgrading", "am upgrading"], a: "is upgrading", exp: "Subjek benda tunggal 'The laptop' menggunakan 'is upgrading'." },
+                { q: "He _______ (fly) to Tokyo next Monday.", opt: ["is flying", "are flying", "am flying"], a: "is flying", exp: "Subjek benda tunggal 'He' menggunakan 'is flying'." },
                 { q: "I am _______ (try) to fix this application error.", opt: ["try", "trying", "tried"], a: "trying", exp: "Setelah to be 'am', wajib menggunakan V-ing untuk aspek continuous." }
             ],
             fase2: [
-                { q: ["are", "watching", "we", "a", "movie"], a: "we are watching a movie", exp: "Struktur: S + are + V-ing + Object." },
-                { q: ["is", "she", "cooking", "dinner", "now"], a: "she is cooking dinner now", exp: "Struktur: S + is + V-ing + Object + Time." },
-                { q: ["not", "i", "am", "working", "today"], a: "i am not working today", exp: "Struktur: S + am + not + V-ing + Time." },
-                { q: ["they", "running", "are", "marathon", "the"], a: "they are running the marathon", exp: "Pola penyusunan dasar kalimat positif present continuous." },
-                { q: ["is", "calling", "who", "you", "now"], a: "who is calling you now", exp: "Kalimat tanya WH-question untuk menanyakan subjek." },
-                { q: ["the", "dog", "is", "barking", "loudly"], a: "the dog is barking loudly", exp: "Subjek tunggal + is + V-ing + Adverb." },
-                { q: ["studying", "are", "you", "medical", "terms"], a: "are you studying medical terms", exp: "Kalimat tanya interogatif: Are + S + V-ing + Objek." },
-                { q: ["patient", "is", "the", "sleeping", "soundly"], a: "the patient is sleeping soundly", exp: "Struktur deskriptif keadaan klinis aktual." },
-                { q: ["it", "raining", "is", "heavily", "outside"], a: "it is raining heavily outside", exp: "Menyatakan cuaca yang sedang berlangsung saat ini." },
-                { q: ["making", "am", "i", "a", "presentation"], a: "i am making a presentation", exp: "Struktur standar pernyataan aktivitas pembicara." }
+                { q: ["are", "watching", "We", "a", "movie"], a: "We are watching a movie", exp: "Struktur: S + are + V-ing + Object." },
+                { q: ["is", "She", "cooking", "dinner", "now"], a: "She is cooking dinner now", exp: "Struktur: S + is + V-ing + Object + Time." },
+                { q: ["not", "I", "am", "working", "today"], a: "I am not working today", exp: "Struktur: S + am + not + V-ing + Time." },
+                { q: ["They", "running", "are", "marathon", "the"], a: "They are running the marathon", exp: "Pola penyusunan dasar kalimat positif present continuous." },
+                { q: ["is", "calling", "Who", "you", "now?"], a: "Who is calling you now", exp: "Kalimat tanya WH-question untuk menanyakan subjek." },
+                { q: ["The", "dog", "is", "barking", "loudly"], a: "The dog is barking loudly", exp: "Subjek tunggal + is + V-ing + Adverb." },
+                { q: ["studying", "Are", "you", "medical", "terms?"], a: "Are you studying medical terms?", exp: "Kalimat tanya interogatif: Are + S + V-ing + Objek." },
+                { q: ["patient", "is", "The", "sleeping", "soundly"], a: "The patient is sleeping soundly", exp: "Struktur deskriptif keadaan klinis aktual." },
+                { q: ["It", "raining", "is", "heavily", "outside"], a: "It is raining heavily outside", exp: "Menyatakan cuaca yang sedang berlangsung saat ini." },
+                { q: ["making", "am", "I", "a", "presentation"], a: "I am making a presentation", exp: "Struktur standar pernyataan aktivitas pembicara." }
             ],
             fase3: [
                 { q: "She is listen to the teacher right now.", a: "She is listening to the teacher right now.", exp: "Present continuous membutuhkan akhiran ing pada kata kerja 'listening'." },
