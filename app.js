@@ -18,7 +18,7 @@ const tensesData = [
                 { q: "I do not _______ (like) spicy food.", opt: ["like", "likes", "liked"], a: "like", exp: "Setelah auxiliary verb 'do/does not' kata kerja kembali ke bentuk dasar V1." },
                 { q: "_______ she practice public speaking every weekend?", opt: ["Do", "Does", "Is"], a: "Does", exp: "Kata tanya untuk subjek tunggal She menggunakan 'Does'." },
                 { q: "We usually _______ (visit) our grandparents on Sunday.", opt: ["visit", "visits", "visiting"], a: "visit", exp: "Adverb of frequency 'usually' menandakan Present Tense, subjek We menggunakan V1 biasa." },
-                { q: "The nurse _______ (check) the patient's blood pressure now.", opt: ["check", "checks", "checking"], a: "checks", exp: "Pernyataan rutinitas tugas profesi menggunakan V1 + s untuk subjek tunggal." },
+                { q: "The nurse _______ (check) the patient's blood pressure regularly.", opt: ["check", "checks", "checking"], a: "checks", exp: "Pernyataan rutinitas tugas profesi menggunakan V1 + s untuk subjek tunggal." },
                 { q: "Cats _______ (catch) mice.", opt: ["catch", "catches", "caught"], a: "catch", exp: "Subjek 'Cats' berbentuk jamak, maka kata kerja tidak perlu akhiran s/es." },
                 { q: "The library _______ (open) at 8 AM daily.", opt: ["open", "opens", "opened"], a: "opens", exp: "Jadwal tetap menggunakan Simple Present Tense." },
                 { q: "You _______ (look) dynamic today.", opt: ["look", "looks", "looking"], a: "look", exp: "Subjek 'You' berpasangan dengan bentuk kata kerja dasar V1 tanpa s." }
